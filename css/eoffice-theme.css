@@ -1,0 +1,38 @@
+/* 1. ตั้งค่าฟอนต์ LINE Seed Sans TH ให้กับทั้งหน้าเว็บ */
+body {
+  font-family: 'LINE Seed Sans TH', sans-serif;
+  background-color: #f0f4f8; /* สีพื้นหลัง e-office (เปลี่ยนได้ตามต้องการ) */
+  color: #333333;
+}
+
+/* 2. ตั้งค่าปุ่ม (Button) พื้นฐาน */
+.button {
+  font-family: 'LINE Seed Sans TH', sans-serif;
+  border-radius: 8px; /* ความมนของปุ่ม */
+  
+  /* พระเอกของเราคือ transition: ทำให้ทุกการเปลี่ยนแปลง (ลอยขึ้น, สีเปลี่ยน, เงาเปลี่ยน) เกิดขึ้นแบบสมูทใน 0.3 วินาที */
+  transition: all 0.3s ease; 
+  
+  /* เงาบางๆ แบบตั้งต้น ให้ปุ่มดูมีมิติแยกจากพื้นหลัง */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+/* 3. Hover Effect: เอฟเฟกต์เมื่อนำเมาส์ไปชี้ */
+.button:hover {
+  transform: translateY(-4px); /* สั่งให้ปุ่มลอยขึ้นด้านบน 4 พิกเซล */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* เพิ่มเงาให้ฟุ้งขึ้น ดูเหมือนปุ่มลอยเข้าหาตัวผู้ใช้ */
+  filter: brightness(1.05); /* ปรับสีของปุ่มให้สว่างขึ้นอีกนิด (ใช้ได้กับปุ่มโซเชียลทุกสี) */
+}
+
+/* 4. Active Effect: เอฟเฟกต์เมื่อคลิกเมาส์ลงไป (ให้ปุ่มยุบตัวลง) */
+.button:active {
+  transform: translateY(0px); /* เด้งกลับมาอยู่ที่พื้นเดิม */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เงากลับมาเท่าเดิม */
+  transition: all 0.1s ease; /* ตอนคลิกให้ยุบตัวลงเร็วๆ จะได้ดูเป็นธรรมชาติ */
+}
+
+/* 5. ปรับฟอนต์สำหรับชื่อ/หัวข้อ ให้ใช้ตัวหนา (Bold) เพื่อความโดดเด่น */
+h1, h2, h3, .name {
+  font-family: 'LINE Seed Sans TH', sans-serif;
+  font-weight: 700; 
+}
