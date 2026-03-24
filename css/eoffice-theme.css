@@ -36,3 +36,9 @@ h1, h2, h3, .name {
   font-family: 'LINE Seed Sans TH', sans-serif;
   font-weight: 700; 
 }
+
+/* 6. ปรับฟอนต์สำหรับปกติ ให้ใช้ตัวปกติ (regular) */
+p, .name {
+  font-family: 'LINE Seed Sans TH', sans-serif;
+  font-weight: 500; 
+}
