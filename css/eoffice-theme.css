@@ -42,3 +42,17 @@ p, .name {
   font-family: 'LINE Seed Sans TH', sans-serif;
   font-weight: 500; 
 }
+
+/* 7. ปรับระยะขอบข้อความให้ชิด button */
+.link-row {
+display: inline-flex; /* วางเป็นคอลัมน์/แถวได้ตามต้องการ */
+flex-direction: column; /* ให้ลิงก์ตัวช่วยอยู่บรรทัดถัดไป */
+gap: 0; /* ระยะห่างระหว่างบรรทัด — ตั้งเป็น 0 เพื่อชิดกัน */
+align-items: flex-start; /* จัดชิดซ้ายให้ตรงกับปุ่ม */
+}
+
+.link-help, .link-help a {
+margin: 0; /* ลบ margin ค่าเริ่มต้น */
+padding-top: 2px; /* หากต้องการช่องห่างเล็กน้อย ให้ปรับเป็นพิกเซลเล็ก ๆ */
+line-height: 1; /* ลดระยะบรรทัด */
+}
