@@ -49,3 +49,9 @@ margin: 0; /* ลบ margin ค่าเริ่มต้น */
 padding-top: 2px; /* หากต้องการช่องห่างเล็กน้อย ให้ปรับเป็นพิกเซลเล็ก ๆ */
 line-height: 1; /* ลดระยะบรรทัด */
 }
+
+/* 8. vdo สาธิตการใช้งานระบบ */
+.button-vdo-demo {
+    --button-text: #ffffff;
+    --button-background: #1f90d6;
+}
