@@ -55,3 +55,61 @@ line-height: 1; /* ลดระยะบรรทัด */
     --button-text: #ffffff;
     --button-background: #1f90d6;
 }
+
+/* --- START ส่วนของ Video Popup --- */
+/* พื้นหลังสีดำโปร่งแสง */
+.modal {
+  display: none; /* ซ่อนไว้เป็นค่าเริ่มต้น */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+
+/* กรอบใส่วิดีโอ */
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 800px; /* ขนาดกว้างสุดของวิดีโอบนหน้าจอคอม */
+  background: transparent;
+}
+
+/* ปุ่มกากบาทปิด Popup */
+.close-btn {
+  position: absolute;
+  top: -35px;
+  right: 0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff4d4d;
+}
+
+/* จัดสัดส่วนวิดีโอให้เป็น 16:9 เสมอ */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px; /* ให้มุมวิดีโอมน */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* --- END ส่วนของ Video Popup --- */
