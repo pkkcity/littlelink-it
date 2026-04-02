@@ -95,13 +95,16 @@
               </span> -->
         </div>
         <hr>
-        <div><p>คู่มือ-เอกสาร</p></div>
+        <div><p><strong>คู่มือ</strong>คู่มือ/ไฟล์ที่เกี่ยวข้อง</p></div>
         <!-- ### help-document ### -->
         <a class="button button-vdo-demo" href="https://www.eoffice.go.th/Video1.html" target="_blank" rel="noopener" role="button"><img class="icon"
-             aria-hidden="true" src="images/icons/icon_vdo.svg" alt="VDO สาธิตการใช้งานระบบ">VDO สาธิตการใช้งานระบบ</a>
-        <!-- Amazon Music -->
-        <a class="button button-amazon-music" href="#" target="_blank" rel="noopener" role="button"><img class="icon"
-            aria-hidden="true" src="images/icons/amazon-music.svg" alt="Amazon Music Logo">Listen on Amazon Music</a>
+             aria-hidden="true" src="images/icons/icon_vdo.svg" alt="VDO สาธิตการใช้งานระบบ">VDO สาธิตการใช้งานระบบ (รวม)</a>
+
+        <a href="#" class="button button-youtube" onclick="openPopup(event, 'https://www.eoffice.go.th/video/3.สาธิตการใช้งานระบบเอกสารดิจิทัล_การเสนอลงนาม.mp4')">
+          <img src="../images/icons/youtube.svg" alt="YouTube" class="icon">ชมวิดีโอแนะนำ e-Office</a>
+        <!-- ### VDO การเสนอลงนาม ### -->
+        <a href="#" class="button button-youtube" onclick="openPopup(event)">
+            <img src="images/icons/youtube.svg" alt="YouTube" class="icon">การเสนอลงนาม</a>
 
         <!-- Apple App Store -->
         <a class="button button-appstore" href="#" target="_blank" rel="noopener" role="button"><img class="icon"
@@ -143,7 +146,42 @@
 
         </div>
     </div>
+  <!-- ### Start code vdo popup ### -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <div class="video-container">
+      <iframe id="yt-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    </div>
+  </div>  
+    <!-- ### END code vdo popup ### -->  
+<!-- ### START script embed vdo youtube ### -->
+    <script>
+  var modal = document.getElementById("videoModal");
+  var iframe = document.getElementById("yt-iframe");
 
+  // ฟังก์ชันนี้จะรับลิงก์ (videoUrl) ที่ส่งมาจากปุ่มที่ถูกคลิก
+  function openPopup(e, videoUrl) {
+    e.preventDefault(); // ป้องกันไม่ให้หน้าเว็บเด้งกลับไปด้านบน
+    iframe.src = videoUrl; // สั่งโหลดวิดีโอตามลิงก์ที่รับมา
+    modal.style.display = "flex"; // แสดง Popup
+  }
+
+  function closePopup() {
+    modal.style.display = "none"; // ซ่อน Popup
+    iframe.src = ""; // ถอดลิงก์ออก วิดีโอจะได้หยุดเล่น
+  }
+
+  // ปิด Popup เมื่อคลิกพื้นที่สีดำรอบๆ วิดีโอ
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closePopup();
+    }
+  }
+</script>
+<!-- ### END script embed vdo youtube ### -->
+    
 </body>
 
 </html>
