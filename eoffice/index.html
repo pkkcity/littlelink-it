@@ -1,175 +1,545 @@
 <!DOCTYPE html>
 
-<!--
-  To change the theme, change the class on the html tag below to one of:
-  - theme-auto: Automatically switches based on user's system preferences
-  - theme-light: Forces light theme
-  - theme-dark: Forces dark theme
--->
-
-<html class="theme-auto" lang="en"> <!-- Update`class="theme-auto" with your preference -->
+<html class="theme-auto" lang="th">
 
 <head>
-  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <head>
-    <link href="https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/LINESeedSansTH/LINESeedSansTH.css"
-      rel="stylesheet">
+  <!-- Search Engine -->
+  <meta name="robots" content="noindex, nofollow">
 
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/brands.css">
-    <link rel="stylesheet" href="../css/skeleton-light.css">
+  <!-- Page Information -->
+  <title>Pakkretcity e-Office</title>
 
-    <link rel="stylesheet" href="../css/eoffice-theme.css">
-  </head>
+  <meta
+    name="description"
+    content="ระบบ e-Office เทศบาลนครปากเกร็ด"
+  >
 
-  <!-- Page Title - Change this to your name/brand (50-60 characters recommended) -->
-  <title>Pakkretcity e- office</title>
-  <link rel="icon" type="image/x-icon" href="images/logo-eoffice_pkc.png"> <!-- Update this with your own favicon -->
+  <meta
+    name="keywords"
+    content="e-Office, เทศบาลนครปากเกร็ด, Pakkretcity"
+  >
 
-  <!-- Meta Description - Write a description (150-160 characters recommended) -->
-  <meta name="description" content="Pakkret city e-Office">
+  <meta
+    name="author"
+    content="เทศบาลนครปากเกร็ด"
+  >
 
-  <!-- Keywords -->
-  <meta name="keywords" content="your name, industry, and specialties">
+  <link
+    rel="canonical"
+    href="https://it-link.pakkret.city/eoffice"
+  >
 
-  <!-- Canonical URL - Helps prevent duplicate content issues -->
-  <meta rel="canonical" href="https://it-link.pakkret.city/eoffice">
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="images/logo-eoffice_pkc.png"
+  >
 
-  <!-- Author Information -->
-  <meta name="author" content="Your Name">
+  <!-- Font -->
+  <link
+    href="https://cdn.jsdelivr.net/gh/lazywasabi/thai-web-fonts@7/fonts/LINESeedSansTH/LINESeedSansTH.css"
+    rel="stylesheet"
+  >
 
   <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/brands.css">
+  <link rel="stylesheet" href="../css/skeleton-light.css">
+  <link rel="stylesheet" href="../css/eoffice-theme.css">
+
+  <!-- Existing eOffice Stylesheets -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/brands.css">
 
-  <!-- LittleLink Extended Stylesheet (Optional) -->
-  <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
-  <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
-         Remove comments if you've added LittleLink Extended dependencies -->
+  <!-- Banner / Image Popup -->
+  <style>
+    .banner-wrapper {
+      width: 100%;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .banner-link {
+      display: block;
+      width: 100%;
+      line-height: 0;
+    }
+
+    .banner-2fa {
+      display: block;
+      width: 100%;
+      max-width: 1500px;
+      height: auto;
+      margin: 0 auto;
+      cursor: zoom-in;
+    }
+
+    #imageContainer {
+      display: none;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #popupImage {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 95vw;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .modal-content.image-mode {
+      width: 95vw;
+      max-width: 95vw;
+    }
+  </style>
 
 </head>
+
 
 <body>
 
   <div class="container">
+
     <div class="column">
 
-      <!--
-              By default, the Avatar is rounded. Use the following:
-              - avatar--rounded: Automatically rounds the image
-              - avatar--soft: Slightly rounds the image
-              - avatar--none: Removes any rounding
+      <!-- Avatar -->
+      <img
+        class="avatar avatar--none"
+        src="images/eoffice_square.png"
+        srcset="images/avatar@2x.png 2x"
+        alt="e-Office เทศบาลนครปากเกร็ด"
+      >
 
-              Be sure to replace the src with your own image path and update the alt text
-            -->
-      <img class="avatar avatar--none" src="images/eoffice_square.png" srcset="images/avatar@2x.png 2x"
-        alt="LittleLink">
 
-      <!-- #### Replace with your name or brand #### -->
+      <!-- Title -->
       <h1>
-        <div>e-Office<br>เทศบาลนครปากเกร็ด</div>
+        e-Office<br>
+        เทศบาลนครปากเกร็ด
       </h1>
 
-      <!-- Add a short description about yourself or your brand -->
-      <p>ระบบ e-Office เทศบาลนครปากเกร็ด</p>
 
-      <!-- ###### All your buttons go here -->
-      <div class="button-stack" role="navigation">
-      <div style="text-align: center;">
-        <img src="images/banner_2fa_setting_eoffice.png" alt="2FA Setting"
-          style="width: 100%; max-width: 1500px; height: auto;"
+      <!-- Description -->
+      <p>
+        ระบบ e-Office เทศบาลนครปากเกร็ด
+      </p>
+
+
+      <!-- Banner 2FA -->
+      <div class="banner-wrapper">
+
+        <a
+          href="images/banner_2fa_setting_eoffice.png"
+          class="banner-link"
+          onclick="openPopup(event, this.href, 'image')"
+          aria-label="คลิกเพื่อขยายภาพวิธีตั้งค่า 2FA"
         >
+
+          <img
+            src="images/banner_2fa_setting_eoffice.png"
+            class="banner-2fa"
+            alt="วิธีตั้งค่า 2FA ระบบ e-Office"
+          >
+
+        </a>
+
       </div>
-        <!-- Default LittleLink -->
-        <!--<a class="button button-default" href="https://pakkretcity.c.eoffice.go.th" target="_blank" rel="noopener" role="button"><img class="icon" aria-hidden="true" src="images/icons/logo-eoffice-small.svg" alt="LittleLink Logo">ระบบ e-Office</a>-->
-        <!-- e-office -->
-        <a class="button button-fiverr" href="https://pakkretcity.c.eoffice.go.th"
-          title="เข้าสู่ระบบ e-Office (e-saraban)" target="_blank" rel="noopener" role="button"><img class="icon"
-            aria-hidden="true" src="images/icons/logo-eoffice-small.svg" alt="eoffice Logo">ระบบ e-Office</a>
 
-        <!-- GForm ลงทะเบียนผู้ใช้งาน -->
+
+      <!-- Buttons -->
+      <div
+        class="button-stack"
+        role="navigation"
+        aria-label="เมนู e-Office"
+      >
+
+
+        <!-- ระบบ e-Office -->
+        <a
+          class="button button-fiverr"
+          href="https://pakkretcity.c.eoffice.go.th"
+          title="เข้าสู่ระบบ e-Office (e-saraban)"
+          target="_blank"
+          rel="noopener"
+          role="button"
+        >
+
+          <img
+            class="icon"
+            aria-hidden="true"
+            src="images/icons/logo-eoffice-small.svg"
+            alt=""
+          >
+
+          ระบบ e-Office
+
+        </a>
+
+
+        <!-- ลงทะเบียนผู้ใช้งาน -->
         <div class="link-row">
-          <a class="button button-default" href="https://dg.th/tu3zlpv5j9" target="_blank" rel="noopener" role="button"><img
-              class="icon" aria-hidden="true" src="images/icons/icon_user-add.svg" alt="ลงทะเบียนใช้งานระบบ e-Office เทศบาลนครปากเกร็ด">ลงทะเบียนใช้ระบบ e-Office</a>
-          <!--<span class="link-help"><a href="https://pakkretcity.gitbook.io/km/strategy-budget/dg.th" target="_blank" rel="noopener"/>วิธีใช้งาน คลิ๊กที่นี่</a>
-              </span> -->
+
+          <a
+            class="button button-default"
+            href="https://dg.th/tu3zlpv5j9"
+            target="_blank"
+            rel="noopener"
+            role="button"
+          >
+
+            <img
+              class="icon"
+              aria-hidden="true"
+              src="images/icons/icon_user-add.svg"
+              alt=""
+            >
+
+            ลงทะเบียนใช้ระบบ e-Office
+
+          </a>
+
         </div>
+
+
         <hr>
-        <div><p><strong>LINK: </strong>คู่มือ/ไฟล์ที่เกี่ยวข้อง</p></div>
-        <!-- ### help-document ### -->
-        <!-- ### การตั้งค่าการตรวจสอบ 2 ขั้นตอน ### -->
-        <a href="#" class="button button-bandcamp" onclick="openPopup(event, 'https://www.eoffice.go.th/video/2FA.mp4')">
-            <img src="../images/icons/youtube.svg" alt="VDO การตั้งค่าการตรวจสอบ 2 ขั้นตอน" class="icon">วิธีตั้งค่า 2FA</a>
-        
-        <!-- ##### banner popup #### -->
-        <div style="text-align: center;">
-          <img src="images/banner_2fa_setting_eoffice.png" alt="2FA Setting" onclick="openPopup(event, this.src, 'image')"
-            style="width:100%; max-width:1500px; height:auto; cursor:zoom-in;"> </div>
-        <!-- ###### -->
-        
-        <!-- ### คู่มือการตั้งค่าการตรวจสอบ 2 ขั้นตอน ### -->
-        <a href="../eoffice/login2fa.pdf" class="button button-bandcamp" target="_blank">
-          <img width="24px" src="images/icons/pdf.svg" class="pdf-icon" alt=""><span> คู่มือวิธีตั้งค่า 2FA</span>
-        </a>        
-        <a class="button button-vdo-demo" href="https://www.eoffice.go.th/Video1.html" target="_blank" rel="noopener" role="button"><img class="icon"
-             aria-hidden="true" src="images/icons/icon_vdo.svg" alt="VDO สาธิตการใช้งานระบบ">VDO สาธิตการใช้งานระบบ (รวม)</a>
 
-        <!-- ### VDO การเสนอลงนาม ### -->
-        <a href="#" class="button button-bandcamp" onclick="openPopup(event, 'https://www.eoffice.go.th/video/3.สาธิตการใช้งานระบบเอกสารดิจิทัล_การเสนอลงนาม.mp4')">
-            <img src="../images/icons/youtube.svg" alt="YouTube" class="icon">การเสนอลงนาม</a>
 
-        <!-- ### VDO การลงนามในเอกสาร ### -->
-        <a href="#" class="button button-bandcamp" onclick="openPopup(event, 'https://www.eoffice.go.th/video/4.สาธิตการใช้งานระบบเอกสารดิจิทัล_การลงนามในเอกสาร.mp4')">
-            <img src="../images/icons/youtube.svg" alt="การลงนามในเอกสาร" class="icon">การลงนามในเอกสาร</a>
-
-      <!-- Feel free to add your own footer information, including updating `privacy.html` to reflect how your LittleLink fork is set up -->
-      <foot>
-        <div><p>งานพัฒนาระบบเครือข่ายสารสนเทศ ฝ่ายสถิติข้อมูลและสารสนเทศ <br>กองยุทธศาสตร์และงบประมาณ เทศบาลนครปากเกร็ด</p>
-          </dvi>
-
-          </footer>
+        <!-- คู่มือ / ไฟล์ที่เกี่ยวข้อง -->
+        <div>
+          <p>
+            <strong>LINK:</strong>
+            คู่มือ/ไฟล์ที่เกี่ยวข้อง
+          </p>
         </div>
-    </div>
-  <!-- ### Start code vdo popup ### -->
-  <div id="videoModal" class="modal">
-    <div class="modal-content">
-    <span class="close-btn" onclick="closePopup()">&times;</span>
-    <div class="video-container">
-      <iframe id="yt-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    </div>
-  </div>  
-    <!-- ### END code vdo popup ### -->  
-<!-- ### START script embed vdo youtube ### -->
-    <script>
-  var modal = document.getElementById("videoModal");
-  var iframe = document.getElementById("yt-iframe");
 
-  // ฟังก์ชันนี้จะรับลิงก์ (videoUrl) ที่ส่งมาจากปุ่มที่ถูกคลิก
-  function openPopup(e, videoUrl) {
-    e.preventDefault(); // ป้องกันไม่ให้หน้าเว็บเด้งกลับไปด้านบน
-    iframe.src = videoUrl; // สั่งโหลดวิดีโอตามลิงก์ที่รับมา
-    modal.style.display = "flex"; // แสดง Popup
-  }
 
-  function closePopup() {
-    modal.style.display = "none"; // ซ่อน Popup
-    iframe.src = ""; // ถอดลิงก์ออก วิดีโอจะได้หยุดเล่น
-  }
+        <!-- VDO วิธีตั้งค่า 2FA -->
+        <a
+          href="https://www.eoffice.go.th/video/2FA.mp4"
+          class="button button-bandcamp"
+          onclick="openPopup(event, this.href)"
+          role="button"
+        >
 
-  // ปิด Popup เมื่อคลิกพื้นที่สีดำรอบๆ วิดีโอ
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      closePopup();
+          <img
+            src="../images/icons/youtube.svg"
+            alt=""
+            class="icon"
+            aria-hidden="true"
+          >
+
+          วิธีตั้งค่า 2FA
+
+        </a>
+
+
+        <!-- คู่มือ PDF วิธีตั้งค่า 2FA -->
+        <a
+          href="../eoffice/login2fa.pdf"
+          class="button button-bandcamp"
+          target="_blank"
+          rel="noopener"
+          role="button"
+        >
+
+          <img
+            src="images/icons/pdf.svg"
+            class="pdf-icon"
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          >
+
+          <span>
+            คู่มือวิธีตั้งค่า 2FA
+          </span>
+
+        </a>
+
+
+        <!-- VDO สาธิตการใช้งานระบบ -->
+        <a
+          class="button button-vdo-demo"
+          href="https://www.eoffice.go.th/Video1.html"
+          target="_blank"
+          rel="noopener"
+          role="button"
+        >
+
+          <img
+            class="icon"
+            aria-hidden="true"
+            src="images/icons/icon_vdo.svg"
+            alt=""
+          >
+
+          VDO สาธิตการใช้งานระบบ (รวม)
+
+        </a>
+
+
+        <!-- VDO การเสนอลงนาม -->
+        <a
+          href="https://www.eoffice.go.th/video/3.สาธิตการใช้งานระบบเอกสารดิจิทัล_การเสนอลงนาม.mp4"
+          class="button button-bandcamp"
+          onclick="openPopup(event, this.href)"
+          role="button"
+        >
+
+          <img
+            src="../images/icons/youtube.svg"
+            alt=""
+            class="icon"
+            aria-hidden="true"
+          >
+
+          การเสนอลงนาม
+
+        </a>
+
+
+        <!-- VDO การลงนามในเอกสาร -->
+        <a
+          href="https://www.eoffice.go.th/video/4.สาธิตการใช้งานระบบเอกสารดิจิทัล_การลงนามในเอกสาร.mp4"
+          class="button button-bandcamp"
+          onclick="openPopup(event, this.href)"
+          role="button"
+        >
+
+          <img
+            src="../images/icons/youtube.svg"
+            alt=""
+            class="icon"
+            aria-hidden="true"
+          >
+
+          การลงนามในเอกสาร
+
+        </a>
+
+
+      </div>
+      <!-- END button-stack -->
+
+
+      <!-- Footer -->
+      <footer>
+
+        <div>
+          <p>
+            งานพัฒนาระบบเครือข่ายสารสนเทศ
+            ฝ่ายสถิติข้อมูลและสารสนเทศ
+            <br>
+            กองยุทธศาสตร์และงบประมาณ
+            เทศบาลนครปากเกร็ด
+          </p>
+        </div>
+
+      </footer>
+
+
+    </div>
+    <!-- END column -->
+
+  </div>
+  <!-- END container -->
+
+
+
+  <!-- =========================================
+       Popup สำหรับ VDO และ IMAGE
+       ========================================= -->
+
+  <div
+    id="videoModal"
+    class="modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Media Viewer"
+  >
+
+    <div
+      id="modalContent"
+      class="modal-content"
+    >
+
+      <!-- Close -->
+      <span
+        class="close-btn"
+        onclick="closePopup()"
+        role="button"
+        aria-label="ปิด"
+      >
+        &times;
+      </span>
+
+
+      <!-- VIDEO -->
+      <div
+        id="videoContainer"
+        class="video-container"
+      >
+
+        <iframe
+          id="yt-iframe"
+          src=""
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          title="e-Office Video"
+        >
+        </iframe>
+
+      </div>
+
+
+      <!-- IMAGE -->
+      <div id="imageContainer">
+
+        <img
+          id="popupImage"
+          src=""
+          alt="ภาพขยาย"
+        >
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================
+       Popup Script
+       ========================================= -->
+
+  <script>
+
+    var modal = document.getElementById("videoModal");
+
+    var modalContent =
+      document.getElementById("modalContent");
+
+    var iframe =
+      document.getElementById("yt-iframe");
+
+    var videoContainer =
+      document.getElementById("videoContainer");
+
+    var imageContainer =
+      document.getElementById("imageContainer");
+
+    var popupImage =
+      document.getElementById("popupImage");
+
+
+    /**
+     * เปิด Popup
+     *
+     * type:
+     * - video = ค่าเริ่มต้น
+     * - image = รูปภาพ
+     */
+    function openPopup(e, url, type = "video") {
+
+      e.preventDefault();
+
+      // เคลียร์ Media เดิม
+      iframe.src = "";
+      popupImage.src = "";
+
+      if (type === "image") {
+
+        // IMAGE MODE
+        videoContainer.style.display = "none";
+
+        imageContainer.style.display = "flex";
+
+        popupImage.src = url;
+
+        modalContent.classList.add("image-mode");
+
+      } else {
+
+        // VIDEO MODE
+        imageContainer.style.display = "none";
+
+        videoContainer.style.display = "block";
+
+        iframe.src = url;
+
+        modalContent.classList.remove("image-mode");
+
+      }
+
+      modal.style.display = "flex";
+
+      // ป้องกันหน้าเว็บด้านหลังเลื่อน
+      document.body.style.overflow = "hidden";
+
     }
-  }
-</script>
-<!-- ### END script embed vdo youtube ### -->
-    
+
+
+    /**
+     * ปิด Popup
+     */
+    function closePopup() {
+
+      modal.style.display = "none";
+
+      // หยุด VDO
+      iframe.src = "";
+
+      // ล้าง IMAGE
+      popupImage.src = "";
+
+      // คืนค่าหน้าเว็บ
+      document.body.style.overflow = "";
+
+    }
+
+
+    /**
+     * คลิกพื้นที่ด้านนอก Popup เพื่อปิด
+     */
+    window.addEventListener("click", function (event) {
+
+      if (event.target === modal) {
+        closePopup();
+      }
+
+    });
+
+
+    /**
+     * กด ESC เพื่อปิด Popup
+     */
+    document.addEventListener("keydown", function (event) {
+
+      if (
+        event.key === "Escape" &&
+        modal.style.display === "flex"
+      ) {
+
+        closePopup();
+
+      }
+
+    });
+
+  </script>
+
+
 </body>
 
 </html>
